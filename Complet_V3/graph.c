@@ -104,3 +104,4 @@ void free_graph(Graph* g) {
     free(g->node_names);
     free(g);
 }
+//Test
