@@ -16,10 +16,9 @@ void print_banner() {
     printf("Carte 10x10 - Poursuite longue et intense\n\n");
 }
 
-// Carte STRUCTURE avec rues -+| ET positions * X
 void display_city_structure(int police, int voleur) {
     printf("--- CARTE STRUCTURE (Rues + Positions) ---\n");
-    printf("Légende: * = Police(%d)  X = Voleur(%d)  -+| = Rues\n\n", police, voleur);
+    printf("Legende: * = Police(%d)  X = Voleur(%d)  -+| = Rues\n\n", police, voleur);
     
     for (int row = 0; row < 10; row++) {
         for (int col = 0; col < 10; col++) {
@@ -29,7 +28,6 @@ void display_city_structure(int police, int voleur) {
             } else if (node == voleur) {
                 printf("X  ");
             } else {
-                // RUES comme tu veux exactement
                 if (row % 2 == 0 && col % 3 == 0) printf("-  ");
                 else if (col % 2 == 0 && row % 3 == 0) printf("|  ");
                 else if (row % 3 == 1) printf("+  ");
@@ -41,10 +39,9 @@ void display_city_structure(int police, int voleur) {
     printf("\n");
 }
 
-// Carte chemin SIMPLE (comme avant)
 void display_path_map(int start, int target, int* path, int path_len) {
     printf("--- CARTE CHEMIN OPTIMAL ---\n");
-    printf("Légende: * = Police(%d)  X = Voleur(%d)  # = Chemin  . = Libre\n\n", start, target);
+    printf("Legende: * = Police(%d)  X = Voleur(%d)  # = Chemin  . = Libre\n\n", start, target);
     
     for (int row = 0; row < 10; row++) {
         for (int col = 0; col < 10; col++) {
@@ -80,7 +77,6 @@ int main() {
     printf("\nDistance totale: %.1f unites (vitesse+trafic)\n", dist);
     printf("%d intersections traversee\n", path_len);
     
-    // LES 2 CARTES!
     display_city_structure(start, target);
     display_path_map(start, target, path, path_len);
     

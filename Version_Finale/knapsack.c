@@ -5,7 +5,6 @@ int knapsack_recursive(Item* items, int n, int W, int* selected, int* sel_len) {
     int total_weight = 0, total_value = 0;
     *sel_len = 0;
     
-    // Tri par ratio valeur/poids (algo glouton sûr)
     for (int i = 0; i < n-1; i++) {
         for (int j = i+1; j < n; j++) {
             double r1 = (double)items[i].value / items[i].weight;
@@ -18,7 +17,6 @@ int knapsack_recursive(Item* items, int n, int W, int* selected, int* sel_len) {
         }
     }
     
-    // Sélection gloutonne
     for (int i = 0; i < n && total_weight < W; i++) {
         if (total_weight + items[i].weight <= W) {
             selected[(*sel_len)++] = i;

@@ -12,7 +12,7 @@ Graph* create_big_city_graph() {
     g->adj_matrix = malloc(g->num_nodes * sizeof(double*));
     g->node_names = malloc(g->num_nodes * sizeof(char*));
     
-    srand(42);  // Pour reproductibilite
+    srand(42);
     
     for (int i = 0; i < g->num_nodes; i++) {
         g->adj_matrix[i] = calloc(g->num_nodes, sizeof(double));
@@ -104,4 +104,3 @@ void free_graph(Graph* g) {
     free(g->node_names);
     free(g);
 }
-//Test
