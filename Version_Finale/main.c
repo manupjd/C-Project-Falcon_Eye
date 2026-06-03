@@ -15,7 +15,7 @@ void print_banner() {
     printf("\n=== FALCON EYE : IA Tactique de Police ===\n");
     printf("Carte 10x10 - Poursuite longue et intense\n\n");
 }
-
+/*
 void display_city_structure(int police, int voleur) {
     printf("--- CARTE STRUCTURE (Rues + Positions) ---\n");
     printf("Legende: * = Police(%d)  X = Voleur(%d)  -+| = Rues\n\n", police, voleur);
@@ -38,7 +38,7 @@ void display_city_structure(int police, int voleur) {
     }
     printf("\n");
 }
-
+*/
 void display_path_map(int start, int target, int* path, int path_len) {
     printf("--- CARTE CHEMIN OPTIMAL ---\n");
     printf("Legende: * = Police(%d)  X = Voleur(%d)  # = Chemin  . = Libre\n\n", start, target);
@@ -77,7 +77,7 @@ int main() {
     printf("\nDistance totale: %.1f unites (vitesse+trafic)\n", dist);
     printf("%d intersections traversee\n", path_len);
     
-    display_city_structure(start, target);
+    //display_city_structure(start, target);
     display_path_map(start, target, path, path_len);
     
     printf("\n[VOLEUR ZIGZAGUE vers 89] Recalcul...\n");
@@ -87,7 +87,7 @@ int main() {
     for (int i = 0; i < path_len; i++) printf("%d ", path[i]);
     printf("\nDistance: %.1f\n", dist);
     
-    display_city_structure(start, target);
+    //display_city_structure(start, target);
     display_path_map(start, target, path, path_len);
     
     free_graph(g);
